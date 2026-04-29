@@ -9,27 +9,28 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id(); // tetap default Laravel
-            $table->string('name'); // tetap ada
-            $table->string('username')->unique(); // tambahan
+            $table->string('id', 20)->primary(); // string ID max 20
+            $table->string('name');
+            $table->string('username')->unique();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('level')->default('user'); // lebih aman string di PostgreSQL
-            $table->date('tanggal_lahir')->nullable(); // tambahan
-            $table->rememberToken();
+            $table->string('level')->default('user');
+            $table->date('tanggal_lahir')->nullable();
             $table->timestamps();
         });
 
+        // OPTIONAL (kalau kamu pakai reset password)
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('email')->primary();
             $table->string('token');
             $table->timestamp('created_at')->nullable();
         });
 
+        // ⚠️ IMPORTANT: sesuaikan dengan ID string
         Schema::create('sessions', function (Blueprint $table) {
             $table->string('id')->primary();
-            $table->foreignId('user_id')->nullable()->index(); 
+            $table->string('user_id', 20)->nullable()->index(); // FIX (bukan foreignId)
             $table->string('ip_address', 45)->nullable();
             $table->text('user_agent')->nullable();
             $table->longText('payload');
