@@ -1,24 +1,24 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
-// 1. Halaman Utama (Landing Page)
+// PUBLIC
 Route::get('/', function () {
     return view('welcome');
 });
 
-// 2. Dashboard Redirect (Otomatis ke Admin setelah Login)
-Route::get('/dashboard', function () {
-    return redirect()->route('admin.dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-// 3. Halaman Dashboard Admin yang Baru
+// ADMIN (KHUSUS ADMIN)
 Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
-})->middleware(['auth'])->name('admin.dashboard');
+})->middleware(['auth', 'admin.only'])->name('admin.dashboard');
 
-// 4. Group Profile (Bawaan Laravel Breeze)
+// USER DASHBOARD
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+// Group Profile (Bawaan Laravel Breeze)
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

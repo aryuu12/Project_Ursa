@@ -6,22 +6,24 @@
 
     <x-auth-session-status class="mb-4" :status="session('status')" />
     @if ($errors->any())
-        <div class="mb-4 p-3 rounded-lg bg-red-100 border-l-4 border-red-500 text-left">
-            <div class="flex items-center">
-                <span class="text-red-600 mr-2">⚠️</span>
-                <span class="text-sm text-red-600 font-medium">Password salah atau data tidak sesuai</span>
+    <div class="mb-4 p-3 rounded-lg bg-red-100 border-l-4 border-red-500 text-left">
+        <div class="flex items-start">
+            <span class="text-red-600 mr-2 mt-1">⚠️</span>
+            <div class="text-sm text-red-600 font-medium">
+                {{ $errors->first() }}
             </div>
         </div>
-    @endif
+    </div>
+@endif
 
     <form method="POST" action="{{ route('login') }}" class="text-left">
         @csrf
 
         <div class="mb-5">
-            <label class="block text-sm font-bold text-gray-700 mb-2">Username / Email</label>
+            <label class="block text-sm font-bold text-gray-700 mb-2">Username/Email</label>
             <div class="relative">
                 <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">👤</span>
-                <input type="email" name="email" :value="old('email')" required autofocus 
+                <input type="text" name="email" :value="old('text')" required autofocus 
                     class="block w-full pl-10 pr-3 py-3 bg-gray-100 border-none rounded-lg focus:ring-2 focus:ring-gray-300">
             </div>
         </div>

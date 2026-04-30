@@ -9,15 +9,11 @@
         <li><a href="#" style="text-decoration: none; color: #333; font-weight: bold; font-size: 12px; letter-spacing: 0.5px;">KONTAK KAMI</a></li>
         
         @auth
-            <li><a href="{{ route('dashboard') }}" style="text-decoration: none; color: #333; font-weight: bold; font-size: 12px; letter-spacing: 0.5px;">USER PANEL</a></li>
-            
-            <li><a href="{{ url('/admin/dashboard') }}" style="text-decoration: none; color: #b31d1d; font-weight: bold; font-size: 12px; letter-spacing: 0.5px;">ADMIN PANEL</a></li>
-            
             <li>
                 <form method="POST" action="{{ route('logout') }}" style="margin: 0;">
                     @csrf
                     <button type="submit" style="background: none; border: 1.5px solid #b31d1d; color: #b31d1d; padding: 6px 15px; border-radius: 20px; font-weight: bold; cursor: pointer; font-size: 11px; transition: 0.3s; text-transform: uppercase;">
-                        LOGOUT ({{ Auth::user()->name }})
+                        LOGOUT  
                     </button>
                 </form>
             </li>
