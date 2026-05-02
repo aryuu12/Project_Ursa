@@ -17,7 +17,7 @@
                 </div>
 
                 <nav class="space-y-2">
-                    <a href="#" class="flex items-center gap-3 p-3 bg-gray-200 rounded-lg font-semibold text-gray-700">
+                    <a href="{{ url('/admin/dashboard') }}" class="flex items-center gap-3 p-3 bg-gray-200 rounded-lg font-semibold text-gray-700">
                         <span>📊</span> Beranda
                     </a>
                     <a href="#" class="flex items-center gap-3 p-3 text-gray-600 hover:bg-gray-50 rounded-lg">

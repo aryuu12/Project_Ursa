@@ -15,35 +15,6 @@
 </head>
 <body class="bg-white flex h-screen overflow-hidden">
 
-    <!-- Sidebar -->
-    <aside class="w-64 flex flex-col py-8 px-6 border-r border-transparent">
-        <!-- Logo -->
-        <div class="flex items-center gap-3 mb-12">
-            <div class="text-red-600 text-3xl">
-                <i class="fa-solid fa-paw transform -rotate-45"></i>
-            </div>
-            <h1 class="font-black text-xl tracking-tighter">URSA EVENT</h1>
-        </div>
-
-        <!-- Navigation -->
-        <nav class="flex-1">
-            <a href="#" class="flex items-center gap-4 text-black font-bold text-lg group">
-                <div class="w-8 h-8 bg-black text-white flex items-center justify-center rounded-md">
-                    <i class="fa-solid fa-wallet text-sm"></i>
-                </div>
-                <span>Finance</span>
-            </a>
-        </nav>
-
-        <!-- Logout -->
-        <div class="mt-auto">
-            <a href="#" class="flex items-center gap-3 text-black font-semibold text-xl">
-                <i class="fa-solid fa-right-from-bracket"></i>
-                <span>Logout</span>
-            </a>
-        </div>
-    </aside>
-
     <!-- Main Content Container -->
     <main class="flex-1 p-6">
         <div class="bg-[#D1D5DB] w-full h-full rounded-[40px] p-12 overflow-auto">
