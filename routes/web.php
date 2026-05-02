@@ -2,28 +2,40 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\EventController;
 
 // PUBLIC
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/event', function () {
-    return view('event');
-});
-Route::get('/laporanlaba', function () {
+Route::get('/event', [EventController::class, 'publicEvent'])
+    ->name('event.public');
+
+Route::get('/laporan', function () {
     return view('laporanlaba');
-});
+})->middleware('auth')->name('laporan');
 
 // ADMIN (KHUSUS ADMIN)
 Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
 })->middleware(['auth', 'admin.only'])->name('admin.dashboard');
-Route::get('/admin/tambahevent', function () {
-    return view('admin.tambahevent');
-})->middleware(['auth', 'admin.only'])->name('admin.tambahevent');
+
+// FORM ADMIN EVENT
 Route::get('/admin/event', function () {
     return view('admin.event');
 })->middleware(['auth', 'admin.only'])->name('admin.event');
+
+Route::get('/admin/event', [EventController::class, 'index'])
+    ->middleware(['auth', 'admin.only'])
+    ->name('admin.event');
+
+Route::get('/admin/tambahevent', [EventController::class, 'create'])
+    ->middleware(['auth', 'admin.only'])
+    ->name('admin.tambahevent');
+
+Route::post('/admin/tambahevent', [EventController::class, 'store'])
+    ->middleware(['auth', 'admin.only'])
+    ->name('admin.tambahevent.store');
 
 // USER DASHBOARD
 Route::get('/dashboard', function () {

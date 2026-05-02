@@ -16,10 +16,9 @@ class LoginMiddleware
 
         $user = Auth::user();
 
-        if (!in_array($user->level, ['admin', 'superadmin'])) {
+        if (!in_array($user->level, ['admin', 'superadmin', 'crew'])) {
             return redirect()->route('admin.dashboard');
         }
-
         return $next($request);
     }
 }

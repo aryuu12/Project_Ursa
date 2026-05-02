@@ -62,7 +62,7 @@ class AuthController extends Controller
         $email = $user->email;
 
         // 🔥 tentukan batas percobaan (WAJIB DI ATAS)
-        $maxAttempts = in_array($user->level, ['admin', 'superadmin']) ? 3 : 5;
+        $maxAttempts = in_array($user->level, ['admin', 'superadmin', 'finance', 'crew']) ? 3 : 5;
 
         // ambil session
         $attempts = session("login_attempts.$email", 0);
@@ -106,9 +106,17 @@ class AuthController extends Controller
         Auth::login($user);
         $request->session()->regenerate();
 
-        // redirect berdasarkan role
-        if (in_array($user->level, ['admin', 'superadmin'])) {
+        // 🔁 redirect berdasarkan role
+        if (in_array($user->level, ['admin', 'superadmin', 'crew'])) {
             return redirect()->route('admin.dashboard');
+        }
+
+        if ($user->level === 'finance') {
+            return redirect()->route('laporan');
+        }
+
+        if ($user->level == 'user') {
+            return redirect()->route('event.public');
         }
 
         if ($user->level === 'user') {
