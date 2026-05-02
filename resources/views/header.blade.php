@@ -5,7 +5,7 @@
 
     <ul style="list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; align-items: center;">
         <li><a href="{{ url('/') }}" style="text-decoration: none; color: #333; font-weight: bold; font-size: 12px; letter-spacing: 0.5px;">BERANDA</a></li>
-        <li><a href="#" style="text-decoration: none; color: #333; font-weight: bold; font-size: 12px; letter-spacing: 0.5px;">EVENT</a></li>
+        <li><a href="{{ url('/event') }}" style="text-decoration: none; color: #333; font-weight: bold; font-size: 12px; letter-spacing: 0.5px;">EVENT</a></li>
         <li><a href="#" style="text-decoration: none; color: #333; font-weight: bold; font-size: 12px; letter-spacing: 0.5px;">KONTAK KAMI</a></li>
         
         @auth

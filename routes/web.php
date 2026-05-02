@@ -7,11 +7,17 @@ use App\Http\Controllers\AuthController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/event', function () {
+    return view('event');
+});
 
 // ADMIN (KHUSUS ADMIN)
 Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
 })->middleware(['auth', 'admin.only'])->name('admin.dashboard');
+Route::get('/admin/tambahevent', function () {
+    return view('admin.tambahevent');
+})->middleware(['auth', 'admin.only'])->name('admin.tambahevent');
 
 // USER DASHBOARD
 Route::get('/dashboard', function () {

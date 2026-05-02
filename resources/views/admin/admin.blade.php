@@ -27,7 +27,7 @@
                     <a href="#" class="flex items-center gap-3 p-3 text-gray-600 hover:bg-gray-50 rounded-lg">
                         <span>📅</span> Daftar Event
                     </a>
-                    <a href="#" class="flex items-center gap-3 p-3 text-gray-600 hover:bg-gray-50 rounded-lg">
+                    <a href="{{ url('/admin/tambahevent') }}" class="flex items-center gap-3 p-3 text-gray-600 hover:bg-gray-50 rounded-lg">
                         <span>➕</span> Tambah Event
                     </a>
                     <a href="#" class="flex items-center gap-3 p-3 text-gray-600 hover:bg-gray-50 rounded-lg">

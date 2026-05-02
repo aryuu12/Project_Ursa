@@ -99,14 +99,14 @@ class AuthController extends Controller
             ]);
         }
 
-        // ✅ login berhasil → reset
+        // login berhasil → reset
         session()->forget("login_attempts.$email");
         session()->forget("login_blocked_until.$email");
 
         Auth::login($user);
         $request->session()->regenerate();
 
-        // 🔁 redirect berdasarkan role
+        // redirect berdasarkan role
         if (in_array($user->level, ['admin', 'superadmin'])) {
             return redirect()->route('admin.dashboard');
         }
@@ -115,7 +115,7 @@ class AuthController extends Controller
             return redirect()->route('dashboard');
         }
 
-        // ❌ role lain ditolak
+        // role lain ditolak
         Auth::logout();
 
         return redirect('/login')->withErrors([
