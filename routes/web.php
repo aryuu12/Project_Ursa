@@ -10,6 +10,9 @@ Route::get('/', function () {
 Route::get('/event', function () {
     return view('event');
 });
+Route::get('/laporanlaba', function () {
+    return view('laporanlaba');
+});
 
 // ADMIN (KHUSUS ADMIN)
 Route::get('/admin/dashboard', function () {
@@ -18,6 +21,9 @@ Route::get('/admin/dashboard', function () {
 Route::get('/admin/tambahevent', function () {
     return view('admin.tambahevent');
 })->middleware(['auth', 'admin.only'])->name('admin.tambahevent');
+Route::get('/admin/event', function () {
+    return view('admin.event');
+})->middleware(['auth', 'admin.only'])->name('admin.event');
 
 // USER DASHBOARD
 Route::get('/dashboard', function () {

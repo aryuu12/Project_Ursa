@@ -24,7 +24,7 @@
                         <span>📝</span> Edit Beranda
                     </a>
                     <div class="pt-4 pb-2 text-xs font-bold text-gray-400 uppercase">Event</div>
-                    <a href="#" class="flex items-center gap-3 p-3 text-gray-600 hover:bg-gray-50 rounded-lg">
+                    <a href="{{ url('/admin/event') }}" class="flex items-center gap-3 p-3 text-gray-600 hover:bg-gray-50 rounded-lg">
                         <span>📅</span> Daftar Event
                     </a>
                     <a href="{{ url('/admin/tambahevent') }}" class="flex items-center gap-3 p-3 text-gray-600 hover:bg-gray-50 rounded-lg">
