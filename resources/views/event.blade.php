@@ -11,9 +11,10 @@ tailwind.config = {
 }
 </script>
 
-<!-- Red Banner Header -->
-<div class="bg-red-700 py-4 px-10">
-    <h1 class="text-white text-2xl font-bold">Event</h1>
+<!-- Header Baru -->
+<div class="py-6 px-6">
+    <h1 class="text-3xl font-bold text-gray-800">Tambah Event</h1>
+    <p class="text-gray-500 mt-1">Masukkan detail informasi event di bawah ini</p>
 </div>
 
 <!-- Container -->

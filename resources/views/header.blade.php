@@ -1,6 +1,6 @@
 <nav style="display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000;">
     <div class="logo">
-        <img src="{{ asset('images/logo.png') }}" alt="Logo" style="height: 40px;">
+        <img src="{{ asset('images/logo.jpeg') }}" alt="Logo" style="height: 40px;">
     </div>
 
     <ul style="list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; align-items: center;">

@@ -1,6 +1,6 @@
 <x-guest-layout>
     <div class="mb-8">
-        <img src="{{ asset('images/logo.png') }}" alt="Logo" class="h-20 mx-auto mb-4">
+        <img src="{{ asset('images/logo.jpeg') }}" alt="Logo" class="h-20 mx-auto mb-4">
         <h1 class="text-2xl font-bold text-gray-900 tracking-wider">URSA EVENT</h1>
     </div>
 

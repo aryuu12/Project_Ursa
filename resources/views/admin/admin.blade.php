@@ -12,7 +12,7 @@
         <aside class="w-64 bg-white shadow-md flex flex-col justify-between">
             <div class="p-6">
                 <div class="flex items-center gap-3 mb-10">
-                    <img src="{{ asset('images/logo.png') }}" alt="Logo" class="h-8">
+                    <img src="{{ asset('images/logo.jpeg') }}" alt="Logo" class="h-8">
                     <span class="font-bold text-lg tracking-wider">URSA EVENT</span>
                 </div>
 
